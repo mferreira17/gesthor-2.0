@@ -3,12 +3,13 @@ import App from './App.vue'
 import router from './router'
 import { BootstrapVue, BootstrapVueIcons  } from 'bootstrap-vue'
 import VueTheMask from 'vue-the-mask'
+import Vuelidate from 'vuelidate'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 
-Vue.use(BootstrapVue).use(BootstrapVueIcons).use(VueTheMask)
+Vue.use(BootstrapVue).use(BootstrapVueIcons).use(VueTheMask).use(Vuelidate)
 
 new Vue({
   router,
