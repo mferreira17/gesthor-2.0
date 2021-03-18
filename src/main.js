@@ -8,7 +8,7 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.config.productionTip = false
 
-Vue.use(BootstrapVue).use(VueTheMask, {precision:4})
+Vue.use(BootstrapVue).use(VueTheMask)
 
 new Vue({
   router,

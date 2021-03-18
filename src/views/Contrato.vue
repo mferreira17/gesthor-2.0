@@ -1,5 +1,5 @@
 <template>
-  <FormContrato />
+  <FormContrato pageTitle="Novo Contrato - Gesthor" />
 </template>
 
 <script>

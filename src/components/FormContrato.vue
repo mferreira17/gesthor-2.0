@@ -1,6 +1,6 @@
 <template>
   <b-container style="padding-top: 2em">
-    <b-card header="Informações de Contrato">
+    <b-card v-bind:header="pageTitle">
       <b-form>
         <b-row>
          <b-col cols=4>
@@ -37,12 +37,7 @@
             label="Valor do Contrato *"
             label-for="input-vlr-contrato"
           >
-            <b-form-input
-              id="input-vlr-contrato"
-              type="text"
-              placeholder="Informe o valor do contrato"
-              required
-            />
+            <money id="input-vlr-contrato" v-bind="money" class="form-control"></money>
           </b-form-group>
          </b-col>
         </b-row>
@@ -58,6 +53,14 @@
               required
             />
           </b-form-group>
+          <b-form-group id="datalist-gestor-contrato" label="Selecione o gestor" label-for="gestor-contrato">
+            <b-form-input list="gestor-contrato" id="input-gestor-contrato"></b-form-input>
+            <b-datalist id="gestor-contrato" :options="gestores" inline="true"></b-datalist>
+          </b-form-group>
+          <b-form-group id="select-empresa" label="Selecione a empresa" label-for="empresa">
+          <b-form-input list="empresas" id="input-empresas"></b-form-input>
+          <b-datalist id="empresas" :options="empresas" v-model="gestor"></b-datalist>
+          </b-form-group>
         <b-button variant="danger" style="margin-right:1rem;"> Cancelar </b-button> 
         <b-button variant="primary"> Salvar </b-button> 
       </b-form>
@@ -66,8 +69,32 @@
 </template>
 
 <script>
+
+import {Money} from 'v-money'
+
 export default {
   name: "FormContrato",
+  components : {Money}, 
+  props : {
+      pageTitle : ''
+  },
+  data () {
+    return {
+      gestores : [
+        { value:'ANDERSON BRAGA', text:'ANDERSON BRAGA'},
+        { value:'MARCIO FERREIRA', text:'MARCIO FERREIRA'}
+      ],
+      empresas : ['FRIOS DA AMAZONIA'],
+      valorContrato : '',
+      money : {
+          decimal: ',',
+          thousands: '.',
+          prefix: 'R$ ',
+          precision: 2,
+          masked: true
+      }
+    }
+  },
 };
 </script>
 
