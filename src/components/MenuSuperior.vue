@@ -13,6 +13,10 @@
                 <b-dropdown-item href="#">Buscar Contrato</b-dropdown-item>
             </b-nav-item-dropdown>
 
+            <b-nav-item-dropdown text="Empresas" right>
+                <b-dropdown-item href="#" to="/nova-empresa">Nova Empresa</b-dropdown-item>
+            </b-nav-item-dropdown>
+
             <b-nav-item to="/sobre">
                 Sobre
             </b-nav-item>

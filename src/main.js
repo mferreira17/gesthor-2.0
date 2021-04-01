@@ -6,6 +6,10 @@ import VueTheMask from 'vue-the-mask'
 import Vuelidate from 'vuelidate'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import 'primevue/resources/themes/nova/theme.css'
+import 'primevue/resources/primevue.min.css'
+import 'primeicons/primeicons.css'
+import 'primeflex/primeflex.css'
 
 Vue.config.productionTip = false
 
